@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/calculator/there-is-cat-that-is-holding-calculator-its-paws-generative-ai_958138-18690-fotor-bg-remover-2024111674454.png"
+    />
+  </head>
+  <body>
+    <div id="calculator">
+      <input id="display" readonly />
+      <div id="keys">
+        <button onclick="clearDisplay()" class="operator-btn">C</button>
+        <button
+          onclick="display.value = display.value.toString().slice(0,-1)"
+          class="operator-btn"
+        >
+          DE
+        </button>
+        <button onclick="appendToDisplay('%')" class="operator-btn">%</button>
+        <button onclick="appendToDisplay('/')" class="operator-btn">/</button>
+
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="appendToDisplay('+')" class="operator-btn">+</button>
+
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="appendToDisplay('-')" class="operator-btn">-</button>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="appendToDisplay('*')" class="operator-btn">*</button>
+        <button onclick="appendToDisplay('.')">.</button>
+        <button onclick="appendToDisplay('0')">0</button>
+
+        <button onclick="calculate()">=</button>
+        <button id="paw-button" class="cat-paw">
+          <img src="/calculator/5cb4761543156278ea1ba1b726cd3fb6.gif"
+          class="cat-vibe"">
+        </button>
+      </div>
+    </div>
+
+    <!-- Cat Peeking Animations -->
+    <div class="cat-peek top-left">
+      <img
+        src="/calculator/4abd43b89fb53bb1c11c27414ea28971.gif"
+        alt="Cat Peeking Left"
+      />
+    </div>
+    <div class="cat-peek top-right">
+      <img
+        src="/calculator/4abd43b89fb53bb1c11c27414ea28971.gif"
+        alt="Cat Peeking Right"
+      />
+    </div>
+    <div class="cat-peek bottom-left">
+      <img
+        src="/calculator/4abd43b89fb53bb1c11c27414ea28971.gif"
+        alt="Cat Peeking Bottom Left"
+      />
+    </div>
+    <div class="cat-peek bottom-right">
+      <img
+        src="/calculator/4abd43b89fb53bb1c11c27414ea28971.gif"
+        alt="Cat Peeking Bottom Right"
+      />
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+.cart-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cart-buttons button {
+    padding: 10px;
+    cursor: pointer;
+    /* border: none; */
+    /* background: #007bff; */
+    /* color: black; */
+    font-size: 20px;
+}
+
+.buyNow {
+    background-color: rgb(197, 196, 196);
+    color: black;
+    border: none;
+    transition: 0.3s ease;
+    font-family: sans-serif;
+}
+
+.buyNow:hover {
+    background-color: black;
+    color: white;
+}
+
+.addToCart {
+    background-color: transparent;
+    color: black;
+    border: 1px solid rgb(118, 118, 118);
+    transition: 0.3s ease;
+    font-family: sans-serif;
+}
+
+.addToCart:hover {
+    background-color: black;
+    color: white;
+}
+
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 500px;
+    height: 100%;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    /* Makes the drawer a column layout */
+    overflow-y: auto;
+    transition: right 0.5s;
+}
+
+.cart-drawer.open {
+    right: 0;
+}
+
+.cart-drawer-header {
+    padding: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+.cart-checkout {
+    /* border-top: 1px solid #ddd; Separates from cart items */
+    padding: 15px;
+    background: #fff;
+}
+
+.cart-item-container {
+    flex-grow: 1;
+    /* Allows cart items to take up space */
+    overflow-y: auto;
+    /* Enables scrolling if items exceed drawer height */
+    /* padding: 5px; */
+}
+
+.cart-item {
+    /* padding: 15px; */
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    display: flex;
+    /* border-bottom: 1px solid #ddd;/ */
+
+}
+
+.cart-item img {
+
+    /* height: auto; */
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.discounted-price {
+    font-weight: bold;
+    color: #000;
+}
+
+.discount-text {
+    color: green;
+    font-size: 14px;
+}
+
+.cart-item-actions {
+    display: flex;
+
+
+}
+
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+    border-left: none;
+    border-right: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.qty-dec-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    width: 40px;
+    cursor: pointer;
+    background: transparent;
+    border-right: none;
+    margin-right: -5px;
+}
+
+.qty-inc-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    width: 40px;
+    cursor: pointer;
+    background: transparent;
+    border-left: none;
+    margin-left: -5px;
+}
+
+.qty-inc-btn:hover {
+    color: white;
+    background-color: #000;
+
+}
+.qty-dec-btn:hover {
+    color: white;
+    background-color: #000;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+}
+
+
+textarea {
+    padding-left: 10px;
+    align-content: center;
+}
+
+
+</style>
+<body>
+    <div class="add-to-cart">
+
+        <!-- Quantity Selector -->
+        <div class="quantity-selector">
+            <button id="decrement" style="border: none; background: transparent;">-</button>
+            <input id="quantity" type="number" value="1" min="1"
+                style="width: 100px;  text-align: center; height: 40px;">
+            <button id="increment" style="border: none; background: transparent;">+</button>
+        </div>
+
+        <!-- Cart Buttons -->
+        <div class="cart-buttons">
+            <button id="addToCart" class="addToCart">Add to Cart</button>
+            <button id="buyNow" class="buyNow">Buy Now</button>
+        </div>
+
+        <!-- Bulk Purchase Options -->
+        <div class="bulk-options">
+            <button> <span style="font-size: larger; font-weight: bold;">15 Pieces</span> <br> <span
+                    style="color: #888;">10% OFF</span></button>
+            <button><span style="font-size: larger; font-weight: bold;">25 Pieces</span> <br> <span
+                    style="color: #888;">15% OFF</span></button>
+            <button><span style="font-size: larger; font-weight: bold;">50 Pieces</span> <br> <span
+                    style="color: #888;">30% OFF</span></button>
+        </div>
+
+
+          </div>
+
+
+
+
+
+
+<script>
+ const quantityInput = document.getElementById('quantity');
+const incrementBtn = document.getElementById('increment');
+const decrementBtn = document.getElementById('decrement');
+const addToCartBtn = document.getElementById('addToCart');
+const viewCartBtn = document.getElementById('viewCart'); // New "View Cart" button
+const cartDrawer = document.getElementById('cartDrawer');
+const cartItems = document.getElementById('cartItem');
+const subtotalElement = document.getElementById('subtotal');
+const productTitle = document.querySelector('.product-title').textContent;
+const productPrice = 29; // Base price of the product
+let cart = []; // To store cart items
+
+// Quantity increment and decrement logic
+incrementBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent cart from closing
+    quantityInput.value = parseInt(quantityInput.value) + 1;
+});
+
+decrementBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent cart from closing
+    if (parseInt(quantityInput.value) > 1) {
+        quantityInput.value = parseInt(quantityInput.value) - 1;
+    }
+});
+
+// Add to Cart logic
+addToCartBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent cart from closing
+
+    let selectedColor = document.querySelector('input[name="color"]:checked')?.value || 'black'; // Default to black
+    let selectedLength = document.querySelector('input[name="length"]:checked')?.value || 'None';
+    let quantity = parseInt(quantityInput.value);
+
+    const product = {
+        title: productTitle,
+        color: selectedColor,
+        length: selectedLength,
+        quantity: quantity,
+        price: productPrice * quantity,
+    };
+
+    // Add product to cart
+    cart.push(product);
+    renderCart();
+
+    // Open the cart drawer
+    cartDrawer.classList.add('open');
+});
+
+// View Cart button logic
+viewCartBtn.addEventListener('click', () => {
+    // Open the cart drawer when "View Cart" is clicked
+    cartDrawer.classList.add('open');
+});
+
+// Render Cart Items
+function renderCart() {
+    const cartItems = document.getElementById('cartItem');
+    const subtotalElement = document.getElementById('subtotalElement'); // Ensure this exists
+
+    if (!cartItems) {
+        console.error("❌ Element with id 'cartItem' not found!");
+        return;
+    }
+
+    if (!subtotalElement) {
+        console.error("❌ Element with id 'subtotalElement' not found! Make sure it's in the HTML.");
+        return;
+    }
+
+    cartItems.innerHTML = ''; // Clear previous items
+    let subtotal = 0;
+
+    cart.forEach((item, index) => {
+        if (!item.price || !item.quantity) {
+            console.error(`⚠ Missing price or quantity for item, item`);
+            return;
+        }
+
+        const price = item.price || 0;
+        const originalPrice = item.originalPrice || price;
+        subtotal += price * item.quantity;
+
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+
+        cartItem.innerHTML = `
+            <img src="img/${item.color}-19.jpg" alt="${item.color} Product Image" class="cart-item-img">
+            <div class="cart-item-details">
+                <p class="product-title">${item.title} - <span class="product-color">${item.color}</span>, 
+                    <span class="product-size">${item.length}</span>
+                </p>
+                <p class="price">
+                    <del class="original-price">$${originalPrice.toFixed(2)}</del>
+                    <strong class="discounted-price">$${price.toFixed(2)}</strong>
+                </p>
+                <p class="discount-text">(Save 42%)</p>
+            </div>
+            <div class="cart-item-actions">
+                <button class="qty-dec-btn" onclick="decrementCartItem(${index}, event)">-</button>
+                <span class="quantity">${item.quantity}</span>
+                <button class="qty-inc-btn" onclick="incrementCartItem(${index}, event)">+</button>
+            </div>
+            <button class="delete-btn" onclick="deleteCartItem(${index}, event)">&#128465;</button>
+        `;
+
+        cartItems.appendChild(cartItem);
+    });
+
+    // ✅ Only update subtotal if element exists
+    subtotalElement.textContent = `Subtotal - $${subtotal.toFixed(2)}`;
+}
+
+// Increment cart item quantity
+function incrementCartItem(index, event) {
+    event.stopPropagation(); // Prevent cart from closing
+    cart[index].quantity++;
+    cart[index].price = productPrice * cart[index].quantity;
+    renderCart();
+}
+
+// Decrement cart item quantity
+function decrementCartItem(index, event) {
+    event.stopPropagation(); // Prevent cart from closing
+    if (cart[index].quantity > 1) {
+        cart[index].quantity--;
+        cart[index].price = productPrice * cart[index].quantity;
+        renderCart();
+    }
+}
+
+// Delete cart item
+function deleteCartItem(index, event) {
+    event.stopPropagation(); // Prevent cart from closing
+    cart.splice(index, 1);
+    renderCart();
+}
+
+// Close Cart Drawer only when clicking outside
+document.addEventListener('click', (e) => {
+    if (!cartDrawer.contains(e.target) && !addToCartBtn.contains(e.target) && !viewCartBtn.contains(e.target)) {
+        cartDrawer.classList.remove('open');
+    }
+});
+
+
+
+</script>
+</body>
+</html>

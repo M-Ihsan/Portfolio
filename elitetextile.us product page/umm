@@ -1,0 +1,122 @@
+<div class="custom-purchase-info">
+          <!-- Customize Note -->
+          <div class="custom-note">
+            <label for="customizeNote">Customize Note</label>
+            <textarea
+              id="customizeNote"
+              class="custom-textarea"
+              placeholder="Your customized print, design, logo, size etc"
+            ></textarea>
+          </div>
+
+          <!-- Quantity Selector -->
+          <div class="quantity-selector">
+            <div class="quantity-wrapper">
+              <button class="btn-quantity btn-decrease" id="decreaseQuantity">
+                -
+              </button>
+              <input
+                type="number"
+                id="quantityInput"
+                min="1"
+                value="1"
+                class="quantity-input"
+              />
+              <button class="btn-quantity btn-increase" id="increaseQuantity">
+                +
+              </button>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+<button class="butn butn-add-to-cart"  id="addToCart">Add to Cart</button>
+          
+
+          <button class="butn butn-buy-now">Buy Now</button>
+          <!-- <div id="cartModal" class="cart-modal">
+            <div class="cart-header">
+              <h3>Your Cart</h3>
+              <button id="closeCart" class="close-cart">&times;</button>
+            </div>
+            <div id="cartItems" class="cart-items">
+              <p>Your cart is empty.</p>
+              
+            </div>
+            <div class="cart-footer">
+              <div class="subtotal-section">
+                <p>Subtotal - <span id="cartItemCount">0 items</span></p>
+                <p>Original Total: <del id="originalTotal">$0.00</del></p>
+                <p>Discounted Total: <span id="cartTotal">$0.00</span></p>
+              </div>
+              
+              <div class="promo-section">
+                <input type="text" id="promoCode" placeholder="Apply a promo code" />
+              </div>
+              <button class="checkout-button">Checkout Now</button>
+            </div>
+          </div> -->
+          <!-- <div id="cartModal" class="cart-modal-1">
+            <div class="cart-header">
+              <h2>Your Cart</h2>
+            </div>
+            <div class="cart-items-container">
+              <div class="cart-item">
+                <img src="product-image.jpg" alt="Product Name" class="cart-item-image" />
+                <div class="cart-item-details">
+                  <p><strong>T-Shirt Over size - Brown, M</strong></p>
+                  <p>
+                    <span class="original-price">$50.0</span>
+                    <span class="discounted-price">$29.0</span>
+                  </p>
+                  <p class="savings">(Save 42%)</p>
+                  <div class="quantity-controls">
+                    <button class="quantity-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-btn">+</button>
+                  </div>
+                </div>
+                <button class="remove-item-btn">🗑️</button>
+              </div>
+            </div>
+            <div class="cart-footer">
+              <div class="promo-code-section">
+                <button class="promo-toggle">Apply a promo code ▼</button>
+                <input type="text" class="promo-code-input" placeholder="Enter promo code" />
+              </div>
+              <div class="cart-summary">
+                <p>Subtotal - <span class="item-count">1 item</span></p>
+                <p>
+                  <span class="original-total">$50.0</span>
+                  <span class="discounted-total">$29.0</span>
+                </p>
+                <p>Shipping & taxes calculated at checkout.</p>
+              </div>
+              <button class="checkout-btn">Checkout Now</button>
+            </div>
+          </div>
+           -->
+        
+    
+
+          <!-- Bulk Purchase Discount -->
+          <div class="bulk-discount">
+            <button class="bulk-discount-btn">
+              <img src="/image/supermarket (2).png" /> Enjoy Bulk Purchase
+              Discount
+            </button>
+            <div class="bulk-options">
+              <div class="bulk-option">
+                <h5>15 Pieces</h5>
+                <span>10% OFF</span>
+              </div>
+              <div class="bulk-option">
+                <h5>25 Pieces</h5>
+                <span>15% OFF</span>
+              </div>
+              <div class="bulk-option">
+                <h5>50 Pieces</h5>
+                <span>30% OFF</span>
+              </div>
+            </div>
+          </div>
+        </div>

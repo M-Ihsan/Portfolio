@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap");
+
+
+
+body { 
+  margin: 0;
+  padding: 0;
+}
+.checkout-header{
+  margin: 0rem 0rem 5rem 8rem;
+font-family: monospace;
+  font-size: 2rem;
+letter-spacing: -3px;
+font-weight: 500;
+}
+.contact-head , .deliveryh{
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -1px;
+
+  margin-bottom: 20px;
+}
+.contact-p , .deliveryp , .shippingp{
+  font-family: Arial, Helvetica, sans-serif ;
+  font-size: .83rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.contact-input{
+  width: 93%;
+  padding: 10px;
+  border: 1px solid #93939336;
+  border-radius: 0px;
+  outline: none;
+}
+.contact-input::placeholder {
+  color: gray; 
+  font-size: 16px; 
+  font-family: Arial, Helvetica, sans-serif ;
+
+  padding-left: 10px; 
+  opacity: 1; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-section{
+  font-family: Arial, sans-serif;
+
+}
+.contact-info-label {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.contact-info-description {
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+.email-info {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-top: 8px;
+}
+.order-summary {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+}
+.order-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.pickup-option {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.pickup-option .form-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hidden {
+  display: none !important;
+} 
+.active { 
+   color: white;
+}
+/* .showship , .showPickup{
+  padding:25px 155px 25px 155px;
+  text-align: center;
+  border: 1px solid #c7c7c7;
+  border-radius: 10px;
+
+} */
+
+.button-delivery{
+  margin-left: -30px;
+}
+.showship, .showPickup {
+    text-align: center;
+    width: 180px;
+    padding: 35px 225px 35px 195px;
+    border: 1px solid #c7c7c7;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+
+}
+
+.showship img, .showPickup img {
+  width: 24px; 
+  height: auto;
+}
+
+@media (max-width: 576px) {
+  .showship, .showPickup {
+      width: 100%; 
+  }
+}
+
+.showship:hover{
+  background-color: #12121205;
+  border: 1px solid #c7c7c7;
+
+}
+/* {
+  padding: 25px 155px 25px 155px;
+  text-align: center;
+  border: 1px solid #c7c7c7;
+  border-radius: 10px;
+} */
+.showPickup:hover{
+  background-color: #12121205;
+  border: 1px solid #c7c7c7;
+
+}
+
+
+
+.shippinghead{
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin-top: 3.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.toggle-btn svg {
+  margin-right: 8px;
+}
+.toggle-btn:hover , .billing-toggle-span:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.payment-container {
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background: #fff;
+  height: 100% !important;
+}
+
+.payment-header {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.payment-icons img {
+  width: 32px;
+  height: auto;
+}
+
+.payment-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.bordered-input {
+height: 45px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background: #fff;
+
+}
+
+.card-fields {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap; /* Prevents wrapping */
+}
+
+.security-icon {
+  width: 24px;
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .card-fields {
+      flex-direction: column;
+  }
+}
+card-number input {
+  width: 310px;
+  padding: 10px;
+  height: 40px;
+}
+
+.expiration {
+  margin-left: 15px;
+}
+
+.expiration input {
+  width: 150px;
+  padding: 10px;
+  height: 42px;
+}
+
+.security input {
+  width: 150px;
+  padding: 10px;
+  height: 42px;
+}
+
+.card-icons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.card-icons img {
+  width: 28px;
+  height: auto;
+}
+
+
+.note {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.note input {
+  width: auto;
+  margin-right: 10px;
+}
+.shipping-container {
+  border-radius: 5px;
+  background: #fff;
+}
+
+.shipping-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.shipping-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: border 0.2s ease-in-out;
+}
+
+.shipping-option input {
+  margin-right: 10px;
+}
+
+/* Change border to black when selected */
+.shipping-option.selected {
+  border: 2px solid black;
+}
+
+.shipping-label {
+  display: flex;
+  align-items: center;
+}
+
+.shipping-price {
+  font-weight: bold;
+}

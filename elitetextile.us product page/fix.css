@@ -1,0 +1,258 @@
+.add-to-cart {
+    margin-top: 20px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-selector button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.bulk-options {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.bulk-options button {
+    padding: 10px;
+    border: 1px solid rgb(103, 102, 102);
+    background: transparent;
+    width: 170px;
+    height: 70px;
+}
+
+.cart-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cart-buttons button {
+    padding: 10px;
+    cursor: pointer;
+    /* border: none; */
+    /* background: #007bff; */
+    /* color: black; */
+    font-size: 20px;
+}
+
+.buyNow {
+    background-color: rgb(197, 196, 196);
+    color: black;
+    border: none;
+    transition: 0.3s ease;
+    font-family: sans-serif;
+    margin-top: -5px;
+}
+
+.buyNow:hover {
+    background-color: black;
+    color: white;
+}
+
+.bulkpurchase {
+    background-color: black;
+    color: white;
+    border: none;
+    transition: 0.3s ease;
+    font-family: sans-serif;
+    margin-top: 8px;
+}
+
+.bulkpurchase svg {
+    transform: rotate(90deg);
+    /* Rotate the icon */
+    stroke-width: 2;
+    /* Increase the stroke width to make the lines thicker */
+    font-weight: bold;
+}
+
+
+.addToCart {
+    background-color: transparent;
+    color: black;
+    border: 1px solid rgb(118, 118, 118);
+    transition: 0.3s ease;
+    font-family: sans-serif;
+}
+
+.addToCart:hover {
+    background-color: black;
+    color: white;
+}
+
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 500px;
+    height: 100%;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    /* Makes the drawer a column layout */
+    overflow-y: auto;
+    transition: right 0.5s;
+}
+
+.cart-drawer.open {
+    right: 0;
+}
+
+.cart-drawer-header {
+    padding: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+.cart-checkout {
+    /* border-top: 1px solid #ddd; Separates from cart items */
+    padding: 15px;
+    background: #fff;
+}
+
+.cart-item-container {
+    flex-grow: 1;
+    /* Allows cart items to take up space */
+    overflow-y: auto;
+    /* Enables scrolling if items exceed drawer height */
+    /* padding: 5px; */
+}
+
+.cart-item {
+    /* padding: 15px; */
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    display: flex;
+    /* border-bottom: 1px solid #ddd;/ */
+
+}
+
+.cart-item img {
+
+    /* height: auto; */
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.discounted-price {
+    font-weight: bold;
+    color: #000;
+}
+
+.discount-text {
+    color: green;
+    font-size: 14px;
+}
+
+.cart-item-actions {
+    display: flex;
+
+
+}
+
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+    border-left: none;
+    border-right: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.qty-dec-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    width: 40px;
+    cursor: pointer;
+    background: transparent;
+    border-right: none;
+    margin-right: -5px;
+}
+
+.qty-inc-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    width: 40px;
+    cursor: pointer;
+    background: transparent;
+    border-left: none;
+    margin-left: -5px;
+}
+
+.qty-inc-btn:hover {
+    color: white;
+    background-color: #000;
+
+}
+
+.qty-dec-btn:hover {
+    color: white;
+    background-color: #000;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+}
+
+
+textarea {
+    padding-left: 10px;
+    align-content: center;
+}

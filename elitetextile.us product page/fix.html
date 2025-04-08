@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fix.css">
+</head>
+
+<body>
+    <!-- cart buttons / checkout/bynow  -->
+    <div class="add-to-cart">
+
+        <!-- Quantity Selector -->
+        <div class="quantity-selector">
+            <button id="decrement" style="border: none; background: transparent;">-</button>
+            <input id="quantity" type="number" value="1" min="1"
+                style="width: 100px;  text-align: center; height: 40px;">
+            <button id="increment" style="border: none; background: transparent;">+</button>
+        </div>
+
+        <!-- Cart Buttons -->
+        <div class="cart-buttons">
+            <button id="addToCart" class="addToCart">Add to Cart</button>
+            <button id="viewCart" class="viewCart"
+                style="width: 120px; height: 50px; border: none; background: #3e3e3e; border-radius: 10px; color: white; font-family: sans-serif; margin-bottom: -10px;">View
+                cart</button>
+            <button id="buyNow" class="buyNow">Buy Now</button>
+            <button id="bulkpurchase" class="bulkpurchase"><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                    height="25" fill="white" class="bi bi-tags" viewBox="0 0 16 16">
+                    <path
+                        d="M3 2v4.586l7 7L14.586 9l-7-7zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586z" />
+                    <path
+                        d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z" />
+                </svg>
+                Enjoy Bulk Purchase Discount</button>
+        </div>
+
+        <!-- Bulk Purchase Options -->
+        <div class="bulk-options mt-4">
+            <button> <span style="font-size: larger; font-weight: bold;">15 Pieces</span> <br> <span
+                    style="color: #888;">10% OFF</span></button>
+            <button><span style="font-size: larger; font-weight: bold;">25 Pieces</span> <br> <span
+                    style="color: #888;">15% OFF</span></button>
+            <button><span style="font-size: larger; font-weight: bold;">50 Pieces</span> <br> <span
+                    style="color: #888;">30% OFF</span></button>
+        </div>
+
+
+    </div>
+
+
+    <!-- Cart Drawer -->
+    <div id="cartDrawer" class="cart-drawer">
+        <div class="cart-drawer-header">
+            Your Cart
+        </div>
+        <div class="cart-item-container">
+            <div class="cart-item" id="cartItem" style="display: flex; flex-wrap: wrap; gap: 15px; padding: 10px;">
+                <img src="https://via.placeholder.com/50" alt="Product Image">
+                <div class="cart-item-actions">
+                    <button class="qty-dec-btn">-</button>
+                    <span class="quantity">3</span>
+                    <button class="qty-inc-btn">+</button>
+                </div>
+                <div class="cart-item-details">
+                    <p class="product-title">T-Shirt Over size - <span class="product-color">Blue</span>, <span
+                            class="product-size">M</span></p>
+                    <p class="price">
+                        <del class="original-price">$150.0</del>
+                        <strong class="discounted-price">$87.0</strong>
+                    </p>
+                    <p class="discount-text">(Save 42%)</p>
+                </div>
+
+                <button class="delete-btn">&#128465;</button>
+
+            </div>
+        </div>
+
+        <!-- checkout section  -->
+        <div class="cart-checkout" style="padding: 15px; width: 100%;">
+            <!-- Promo Code Section -->
+            <div style="border-top: 1px solid #ddd; padding-top: 15px;">
+                <button id="promo-toggle"
+                    style="width: 100%; text-align: left; background: none; border: none; font-size: large; font-weight: bold; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                    Apply a promo code
+                    <span id="toggle-icon" style="transform: rotate(0deg); transition: transform 0.3s;">▼</span>
+                </button>
+                <div id="promo-code-section" style="display: none; margin-top: 10px;">
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="Promo code"
+                            style="flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" />
+                        <button
+                            style="background: #000; color: #fff; padding: 10px; border: none; border-radius: 5px;">Apply</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subtotal Section -->
+            <div>
+                <p id="subtotalElement" style="margin: 0; font-size: large; font-weight: bold;">Subtotal - $0.00
+                </p>
+                <p style="color: #888;">Shipping & taxes calculated at checkout.</p>
+                <button
+                    style="width: 100%; background: #000; color: #fff; padding: 10px; border: none; border-radius: 5px;">Checkout
+                    Now</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="fix.js"></script>
+</body>
+
+</html>

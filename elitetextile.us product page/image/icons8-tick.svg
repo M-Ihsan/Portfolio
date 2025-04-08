@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25">
+  <defs>
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(0, 0, 0, 0.5)" />
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <!-- Arrow Path -->
+    <path
+      d="M20.292 6.293a1 1 0 0 0-1.414 0L9 16.172 5.707 12.88a1 1 0 0 0-1.414 1.415l4 4a1 1 0 0 0 1.414 0l11-11a1 1 0 0 0 0-1.415z"
+      fill="none" 
+      stroke="black" 
+      stroke-width="3" 
+    />
+    <!-- Inner White Arrow -->
+    <path
+      d="M20.292 6.293a1 1 0 0 0-1.414 0L9 16.172 5.707 12.88a1 1 0 0 0-1.414 1.415l4 4a1 1 0 0 0 1.414 0l11-11a1 1 0 0 0 0-1.415z"
+      fill="white" 
+      stroke="none" 
+    />
+  </g>
+</svg>

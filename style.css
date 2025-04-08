@@ -1,0 +1,158 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+  }
+
+  header {
+    padding: 60px 0;
+    background-color: #1e1e1e;
+    height: 70dvh;
+  }
+.header-container{
+    height: 40dvh;
+}
+  .hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  .rotating-text {
+    transition: opacity 0.5s ease-in-out;
+    color: #ffa700;
+  }
+  
+  .inner-circle {
+    position: relative;
+    z-index: 1;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid #ffa700;
+  }
+
+  .inner-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+/* Small screens (mobile) */
+@media (max-width: 576px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .inner-circle {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 1.9rem;
+   width: 150%;
+   text-align: center;
+   padding: 0;
+   margin-left: -80px;
+   
+  }
+
+  .inner-circle {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+}
+  
+  main {
+    background-color: #2c2c2c;
+    color: #ffffff; /* Make sure text is legible on dark background */
+    padding: 60px 0;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card img {
+    object-fit: cover;
+    height: 200px;
+  }
+  
+
+  
+  .progress-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .progress-item {
+    width: 200px;
+    height: 200px;
+    font-size: 30px;
+    color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background: #07070c;
+    text-align: center;
+    line-height: 200px;
+    margin: 20px;
+  }
+  
+  .progress-item::after {
+    content: "%";
+  }
+  
+  .progress-item .progress-title {
+    position: relative;
+    z-index: 100;
+  }
+  
+  .progress-item .progress-overlay {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #07070c;
+  }
+  
+  .progress-item .progress-left,
+  .progress-item .progress-right {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 10px solid #ffa700;
+    border-radius: 100px 0 0 100px;
+    border-right: 0;
+    transform-origin: right; /* Correcting the origin */
+    transition: transform 1s ease-in-out;
+  }
+  
+  /* 85% Circle (306 degrees = 180 + 126) */
+  .progress-85 .progress-right {
+    transform: rotate(280deg); /* Right side rotates half for 85% */
+  }
+  
+  .progress-85 .progress-left {
+    transform: rotate(180deg); /* Left side fills 126 degrees (306 - 180) */
+  }
+  
+  /* 50% Circle (exact half) */
+  .progress-50 .progress-right {
+    transform: rotate(180deg); /* Right side rotates half for 50% */
+  }
+  
+ 
+  

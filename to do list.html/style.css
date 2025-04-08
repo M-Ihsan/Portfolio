@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+
+}
+
+.container {
+  width: 100%;
+  min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #3ba4cd, /* Sky blue */
+    #1e1e1e  /* Black */
+  ); /* Sky blue to black gradient */
+  perspective: 800px; /* Perspective for 3D effect */
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.3),
+    transparent 70%
+  );
+  animation: pulse 8s infinite;
+  z-index: 0;
+  transform: translate(-50%, -50%) rotateX(25deg) rotateY(15deg);
+  box-shadow: 0px 0px 100px rgba(255, 255, 255, 0.2),
+    inset 0px 0px 50px rgba(255, 255, 255, 0.1);
+  filter: blur(5px); /* Adds smoothness to the glow */
+}
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotateX(25deg) rotateY(15deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1) rotateX(30deg) rotateY(20deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotateX(25deg) rotateY(15deg);
+  }
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particles span {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: move 12s infinite linear;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(100vh) scale(0.5);
+  }
+}
+
+/* General Container with Neo-Morphism Design */
+.todo-app {
+  width: 100%;
+  max-width: 600px;
+  background: linear-gradient(180deg, #36454F, #00BFFF); /* Charcoal to Deep Sky Blue */
+  margin: 60px auto;
+  padding: 40px 30px;
+  border-radius: 30px;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.todo-app:hover {
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 20px #1e2933, -10px -10px 20px #00a3e0;
+}
+
+/* Heading */
+.todo-app h2 {
+  color: #ffffff; /* Pure white for contrast */
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.todo-app h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #e64a19; /* Bright yellow accent */
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+.todo-app h2 img {
+  margin-bottom: -20px;
+  width: 50px;
+}
+/* Input Row */
+.row {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9); 
+  border-radius: 30px; 
+  padding-left:20px ; 
+  margin-bottom: 20px;
+  height: 60px; 
+}
+
+input {
+  flex: 1; 
+  border: none;
+  outline: none;
+  background: transparent; 
+  font-size: 16px;
+  color: #36454F; 
+  padding: 0 16px; 
+  height: 100%; 
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px; 
+}
+
+input::placeholder {
+  color: #7a869a; /* Muted grey for placeholder text */
+}
+
+button {
+  border: none;
+  outline: none;
+  background: #ff5722; /* Bright orange button */
+  color: #fff; /* White text for contrast */
+  font-size: 16px; /* Keep font size the same */
+  font-weight: bold;
+  cursor: pointer;
+  height: 100%; /* Matches the row height */
+  padding: 0 40px; /* Increased padding for a larger button */
+  border-radius: 30px; /* Fully rounded button */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background: #e64a19; /* Slightly darker orange on hover */
+  transform: scale(1.05); /* Slight hover enlargement */
+}
+
+
+/* Todo List Items */
+ul li {
+  list-style: none;
+  font-size: 16px;
+  padding: 16px 12px 16px 60px;
+  cursor: pointer;
+  position: relative;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  margin-bottom: 15px;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px #2a3842, -6px -6px 12px #00a3e0;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s;
+  color: #36454F; /* Charcoal text for readability */
+}
+
+ul li:hover {
+  background-color: #ffebcd; /* Light beige hover */
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 16px #2a3842, -8px -8px 16px #00a3e0;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+ul li.checked {
+  text-decoration: line-through 2px black;
+  font-size: 1.2rem;
+  color: #95a5a6; /* Muted grey for completed items */
+  background: #d3f9d8; /* Light green for completed tasks */
+}
+
+ul li.checked::before {
+  background: radial-gradient(circle, #fe5f2e, #ffd700); /* Yellow gradient for icons */
+}
+
+/* Delete Button */
+ul li span {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  color: #e74c3c; /* Bright red for delete */
+  line-height: 36px;
+  text-align: center;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ul li span:hover {
+  background: #ffebcd; /* Light beige hover */
+  color: #ff4500; /* Bright orange-red for hover */
+}
