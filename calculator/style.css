@@ -60,7 +60,7 @@ body::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  z-index: 999;
 }
 
 /* Calculator display */
@@ -77,6 +77,7 @@ body::after {
     inset 5px 5px 15px rgba(0, 0, 0, 0.5), 
     inset -5px -5px 15px rgba(255, 255, 255, 0.05);
   margin-bottom: 20px;
+  z-index: 9999;
 }
 
 #display:focus {
@@ -90,6 +91,7 @@ body::after {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  z-index: 9999;
 }
 
 /* 3D Buttons */
@@ -224,132 +226,64 @@ button:active {
   }
 }
 
-@media (max-width: 800px) {
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
   #calculator {
     padding: 20px;
-    max-width: 95vw;
-    border-radius: 20px;
+    max-width: 90%;
   }
 
   #display {
     font-size: 2.2rem;
-    padding: 15px;
   }
 
   #keys {
-    gap: 25px;
+    gap: 15px;
   }
 
-  .cat-paw {
-    width: 70px;
-    height: 70px;
-    font-size: 1.4rem;
-    animation: none;
-  }
-
-  .cat-paw img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .cat-peek {
-    scale: 30%;
-  }
-  .bottom-left, .bottom-right , .top-left ,.top-right  {
-    display: none;
-  }
-}
-
-@media (max-width: 500px) {
-  #calculator {
-    padding: 20px;
-    max-width: 95vw;
-    border-radius: 20px;
-  }
-
-  #display {
-    font-size: 2rem;
-    padding: 15px;
-  }
-
-  #keys {
-    gap: 12px;
-  }
-
- 
-  .cat-paw {
+  button {
     width: 60px;
     height: 60px;
     font-size: 1.2rem;
-    animation: none ;
   }
 
-  .cat-paw img {
-    width: 15px;
-    height: 15px;
+  /* Hide the cat paw animation and the peek effect */
+  .cat-paw {
+    animation: none;
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
   }
 
   .cat-peek {
-    scale: 10%;
+    opacity: 0;
   }
-  .bottom-left, .bottom-right , .top-left ,.top-right  {
+
+  /* Hide positions of the glowing shapes */
+  .bottom-left, .bottom-right, .top-left, .top-right {
     display: none;
   }
 }
 
-@media (max-width: 375px) {
-  #display {
-    font-size: 1.8rem;
-    padding: 12px;
+/* Media Query for Small Screens (Phones) */
+@media (max-width: 480px) {
+  #calculator {
+    padding: 15px;
+    max-width: 100%;
   }
 
-  .cat-paw {
+  #display {
+    font-size: 1.8rem;
+  }
+
+  button {
     width: 50px;
     height: 50px;
     font-size: 1rem;
-    animation: none;
   }
 
-  .cat-paw img {
-    width: 15px;
-    height: 15px;
-  }
-
-  .cat-peek {
-    scale: 10%;
-  }
-  .bottom-left, .bottom-right , .top-left ,.top-right  {
-    display: none;
-  }
-}
-
-@media (max-width: 320px) {
-  #calculator {
-    padding: 15px;
-    max-width: 90vw;
-  }
-
-  #display {
-    font-size: 1.6rem;
-    padding: 10px;
-  }
-
-  .cat-paw {
-    width: 45px;
-    height: 45px;
-    font-size: 0.9rem;
-    animation: none;
-  }
-
-  .cat-paw img {
-    width: 15px;
-    height: 15px;
-  }
-
-  .cat-peek {
-    scale:10%;
-  }
-  .bottom-left, .bottom-right , .top-left ,.top-right  {
+  /* Hide positions of the glowing shapes */
+  .bottom-left, .bottom-right, .top-left, .top-right {
     display: none;
   }
 }
