@@ -91,7 +91,6 @@ body {
   .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; 
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -102,6 +101,7 @@ body {
   }
   
   .footer-column h4 {
+    color: #f7941d;
     font-size: 1.2rem;
     margin-bottom: 10px;
   }
@@ -131,7 +131,7 @@ body {
   }
   
   .right-column {
-    text-align: right;
+    text-align: left;
   }
   
   /* Footer Bottom */
