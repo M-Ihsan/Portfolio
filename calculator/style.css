@@ -273,20 +273,21 @@ button:active {
     gap: 12px;
   }
 
-  button,
+ 
   .cat-paw {
     width: 60px;
     height: 60px;
     font-size: 1.2rem;
+    animation: none ;
   }
 
   .cat-paw img {
-    width: 35px;
-    height: 35px;
+    width: 15px;
+    height: 15px;
   }
 
   .cat-peek {
-    scale: 30%;
+    scale: 10%;
   }
 }
 
@@ -296,20 +297,20 @@ button:active {
     padding: 12px;
   }
 
-  button,
   .cat-paw {
     width: 50px;
     height: 50px;
     font-size: 1rem;
+    animation: none;
   }
 
   .cat-paw img {
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
   }
 
   .cat-peek {
-    scale: 25%;
+    scale: 10%;
   }
 }
 
@@ -324,19 +325,19 @@ button:active {
     padding: 10px;
   }
 
-  button,
   .cat-paw {
     width: 45px;
     height: 45px;
     font-size: 0.9rem;
+    animation: none;
   }
 
   .cat-paw img {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
   }
 
   .cat-peek {
-    scale: 20%;
+    scale:10%;
   }
 }
