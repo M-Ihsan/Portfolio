@@ -245,6 +245,9 @@ body {
     .navbar-nav .nav-link {
       font-size: 0.95rem;
     }
+    .footer-section{
+      text-align: center;
+    }
   
     .footer-bottom {
       font-size: 0.75rem;
