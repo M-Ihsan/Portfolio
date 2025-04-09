@@ -255,7 +255,7 @@ button:active {
   .cat-peek {
     scale: 30%;
   }
-  .bottom-left , .bottom-right{
+  .bottom-left, .bottom-right , .top-left ,.top-right  {
     display: none;
   }
 }
@@ -292,7 +292,7 @@ button:active {
   .cat-peek {
     scale: 10%;
   }
-  .bottom-left , .bottom-right{
+  .bottom-left, .bottom-right , .top-left ,.top-right  {
     display: none;
   }
 }
@@ -349,7 +349,7 @@ button:active {
   .cat-peek {
     scale:10%;
   }
-  .bottom-left , .bottom-right{
+  .bottom-left, .bottom-right , .top-left ,.top-right  {
     display: none;
   }
 }
@@ -385,7 +385,7 @@ button:active {
     scale: 10%;
   }
 
-  .bottom-left, .bottom-right {
+  .bottom-left, .bottom-right , .top-left ,.top-right  {
     display: none;
   }
 }
@@ -423,7 +423,7 @@ button:active {
     scale: 15%;
   }
 
-  .bottom-left, .bottom-right {
+  .bottom-left, .bottom-right , .top-left ,.top-right  {
     display: none;
   }
 }
@@ -461,7 +461,7 @@ button:active {
     scale: 20%;
   }
 
-  .bottom-left, .bottom-right {
+  .bottom-left, .bottom-right , .top-left ,.top-right  {
     display: none;
   }
 }
@@ -499,7 +499,7 @@ button:active {
     scale: 25%;
   }
 
-  .bottom-left, .bottom-right {
+  .bottom-left, .bottom-right , .top-left ,.top-right  {
     display: none;
   }
 }
