@@ -255,6 +255,9 @@ button:active {
   .cat-peek {
     scale: 30%;
   }
+  .bottom-left , .bottom-right{
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {
@@ -289,6 +292,9 @@ button:active {
   .cat-peek {
     scale: 10%;
   }
+  .bottom-left , .bottom-right{
+    display: none;
+  }
 }
 
 @media (max-width: 375px) {
@@ -311,6 +317,9 @@ button:active {
 
   .cat-peek {
     scale: 10%;
+  }
+  .bottom-left , .bottom-right{
+    display: none;
   }
 }
 
@@ -339,5 +348,8 @@ button:active {
 
   .cat-peek {
     scale:10%;
+  }
+  .bottom-left , .bottom-right{
+    display: none;
   }
 }
