@@ -237,14 +237,14 @@ button:active {
   }
 
   #keys {
-    gap: 15px;
+    gap: 25px;
   }
 
-  button,
   .cat-paw {
     width: 70px;
     height: 70px;
     font-size: 1.4rem;
+    animation: none;
   }
 
   .cat-paw img {
