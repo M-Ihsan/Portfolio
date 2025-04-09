@@ -60,6 +60,7 @@ body::after {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 /* Calculator display */
@@ -147,6 +148,7 @@ button:active {
     inset -6px -6px 8px rgba(255, 255, 255, 0.05);
   transform: translateY(4px);
 }
+
 /* Cat paw button (fun addition) */
 .cat-paw {
   background: linear-gradient(145deg, #d39a8c, #b38076);
@@ -221,6 +223,40 @@ button:active {
     transform: translateY(-10px);
   }
 }
+
+@media (max-width: 800px) {
+  #calculator {
+    padding: 20px;
+    max-width: 95vw;
+    border-radius: 20px;
+  }
+
+  #display {
+    font-size: 2.2rem;
+    padding: 15px;
+  }
+
+  #keys {
+    gap: 15px;
+  }
+
+  button,
+  .cat-paw {
+    width: 70px;
+    height: 70px;
+    font-size: 1.4rem;
+  }
+
+  .cat-paw img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cat-peek {
+    scale: 30%;
+  }
+}
+
 @media (max-width: 500px) {
   #calculator {
     padding: 20px;
@@ -234,7 +270,7 @@ button:active {
   }
 
   #keys {
-    gap: 15px;
+    gap: 12px;
   }
 
   button,
@@ -251,5 +287,56 @@ button:active {
 
   .cat-peek {
     scale: 30%;
+  }
+}
+
+@media (max-width: 375px) {
+  #display {
+    font-size: 1.8rem;
+    padding: 12px;
+  }
+
+  button,
+  .cat-paw {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .cat-paw img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cat-peek {
+    scale: 25%;
+  }
+}
+
+@media (max-width: 320px) {
+  #calculator {
+    padding: 15px;
+    max-width: 90vw;
+  }
+
+  #display {
+    font-size: 1.6rem;
+    padding: 10px;
+  }
+
+  button,
+  .cat-paw {
+    width: 45px;
+    height: 45px;
+    font-size: 0.9rem;
+  }
+
+  .cat-paw img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .cat-peek {
+    scale: 20%;
   }
 }
