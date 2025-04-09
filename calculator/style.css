@@ -221,3 +221,35 @@ button:active {
     transform: translateY(-10px);
   }
 }
+@media (max-width: 500px) {
+  #calculator {
+    padding: 20px;
+    max-width: 95vw;
+    border-radius: 20px;
+  }
+
+  #display {
+    font-size: 2rem;
+    padding: 15px;
+  }
+
+  #keys {
+    gap: 15px;
+  }
+
+  button,
+  .cat-paw {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+
+  .cat-paw img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .cat-peek {
+    scale: 30%;
+  }
+}
