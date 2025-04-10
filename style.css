@@ -155,4 +155,92 @@ body {
   }
   
  
-  
+  /* Extra Small Devices (phones under 480px) */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-left: 0;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .inner-circle {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+  }
+
+  .progress-item {
+    width: 140px;
+    height: 140px;
+    font-size: 22px;
+    line-height: 140px;
+    margin: 15px auto;
+  }
+
+  .progress-item .progress-title {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  header {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .header-container {
+    height: auto;
+  }
+}
+
+/* Small Devices (phones up to 576px) */
+@media (max-width: 576px) {
+  .hero-text h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .inner-circle {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .progress-item {
+    width: 160px;
+    height: 160px;
+    font-size: 24px;
+    line-height: 160px;
+  }
+}
+
+/* Medium Devices (up to tablets 768px) */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    padding: 0 10px;
+  }
+
+  .inner-circle {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+  }
+
+  .progress-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .progress-item {
+    width: 180px;
+    height: 180px;
+    font-size: 26px;
+    line-height: 180px;
+  }
+}
