@@ -1,149 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <!-- Bootstrap JS Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap"
-      rel="stylesheet"/>
+<html lang="en" data-theme="dark">
 
-    <title>My PortFolio</title>
-  </head>
-  <body>
-    <header class="container-fluid  ">
-        <div class="row align-items-center text-center text-md-start m-5 px-5 header-container">
-          
-          <!-- Text Column -->
-          <div class="col-md-6 mb-4 mb-md-0">
-            <div class="hero-text">
-              <h1>Hello, I'm <span class="rotating-text">Muhammad Ihsan</span></h1>
-            </div>
-          </div>
-      
-          <!-- Image Column -->
-          <div class="col-md-6 d-flex justify-content-end">
-              <div class="inner-circle">
-                <img src="img/4189987982.png" alt="Profile" class="img-fluid">
-            </div>
-          </div>
-      
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+
+<body>
+  <div class="container">
+    <input type="checkbox" class="input-btn" id="switch" onclick="toggleTheme()"/>  
+    <label for="switch" class="toggle" >
+      <div class="icon-btn icon--moon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          width="32"
+          height="32"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </div>
+  
+      <div class="icon icon--sun">
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        width="32"
+        height="32"
+      >
+        <path
+          d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
+        ></path>
+      </svg>
+      </div>
+    </label>
+  </div>
+  
+    
+  <div id="loader">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <section class="container py-5 about-section">
+    <div class="row align-items-center">
+      <div class="col-md-6 image-col">
+        <div class="inner-circle">
+          <img src="img/4189987982.png" alt="About Me" class="img-fluid rounded about-img">
         </div>
-      </header>
+      </div>
+      <div class="col-md-6 text-col">
+        <h2 class="highlight">About Me</h2>
+        <p>I’m Ihsan, a motivated front-end developer with a solid foundation in HTML, CSS, Bootstrap, and JavaScript. I enjoy building responsive websites and adding interactivity using libraries, while also exploring React to integrate components. Debugging and problem-solving excite me, and I strive to match designs as closely as possible.
 
-      <main>
-        <!-- About Me Section -->
-        <section id="about" class="py-5 text-light">
-          <div class="container">
-            <h2 class="mb-4 text-center">About Me</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <!-- Optionally a profile image -->
-                <img src="img/Screenshot-1.webp" alt="Ihsan's Profile Photo" class="profile-img img-fluid">
-              </div>
-              <div class="col-md-8">
-                <p>
-                  Hi, I'm Ihsan — a Front-End Developer and Intern with a passion for clean and interactive web design. I love transforming ideas into beautiful digital experiences.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      
-        <!-- Projects Section -->
-        <section id="projects" class="py-5 text-light bg-dark">
-          <div class="container">
-            <h2 class="mb-5 text-center">My Projects</h2>
-            <div class="row g-4">
-        
-              <!-- Project Card -->
-              <div class="col-md-4">
-                <div class="card bg-secondary text-light border-0 shadow h-100">
-                  <img src="img/calculator.png" class="card-img-top img-fluid rounded-top" alt="Project 1">
-                  <div class="card-body">
-                    <h5 class="card-title">Calculator</h5>
-                    <p class="card-text">A simple calculator built using HTML, CSS, and JavaScript.</p>
-                  </div>
-                  <div class="card-footer bg-transparent border-0 text-center">
-                    <a href="calculator/index.html" target="_blank" class="btn btn-outline-light">View Project</a>
-                  </div>
-                </div>
-              </div>
-        
-              <div class="col-md-4">
-                <div class="card bg-secondary text-light border-0 shadow h-100">
-                  <img src="img/todolist.png" class="card-img-top img-fluid rounded-top" alt="Project 1">
-                  <div class="card-body">
-                    <h5 class="card-title">To-Do List with Snowfall Effect</h5>
-                    <p class="card-text">A clean, functional To-Do app with add, delete, complete task features — plus a snowfall effect for a cozy UI touch.</p>
-                  </div>
-                  <div class="card-footer bg-transparent border-0 text-center">
-                    <a href="to do list.html/index.html" target="_blank" class="btn btn-outline-light">View Project</a>
-                  </div>
-                </div>
-              </div>    
-              
-              <div class="col-md-4">
-                <div class="card bg-secondary text-light border-0 shadow h-100">
-                  <img src="img/elitetextile.png" class="card-img-top img-fluid rounded-top" alt="Project 1">
-                  <div class="card-body">
-                    <h5 class="card-title">Elite Textile E-commerce Website</h5>
-                    <p class="card-text">A modern product page with view, add to cart, and buy now features. Built for a smooth shopping experience using HTML, CSS & JavaScript.</p>
-                  </div>
-                  <div class="card-footer bg-transparent border-0 text-center">
-                    <a href="elitetextile.us product page/index.html" target="_blank" class="btn btn-outline-light">View Project</a>
-                  </div>
-                </div>
-              </div>    
+          Currently, I’m actively seeking opportunities—internships, freelance projects, or training programs—to sharpen my skills, learn from experienced developers, and contribute to real-world projects. Let’s connect and grow together!</p>
+        <span class="social-icons">
+          <a href="https://github.com/M-Ihsan" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/ihsan-ul-haq-38558b241/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        </span>
+      </div>
+    </div>
+  </section>
+  
 
-              <div class="col-md-4">
-                <div class="card bg-secondary text-light border-0 shadow h-100">
-                  <img src="img/tipuu.png" class="card-img-top img-fluid rounded-top" alt="Project 1">
-                  <div class="card-body">
-                    <h5 class="card-title">Tipa Haus Books – 2024</h5>
-                    <p class="card-text">A book website project for Tipa Haus, featuring a modern layout to showcase books and categories with responsive design.</p>
-                  </div>
-                  <div class="card-footer bg-transparent border-0 text-center">
-                    <a href="2024 Tipa Haus Books. Project Web/index.html" target="_blank" class="btn btn-outline-light">View Project</a>
-                  </div>
-                </div>
-              </div> 
-              
-              <div class="col-md-4">
-                <div class="card bg-secondary text-light border-0 shadow h-100">
-                  <img src="img/cli.png" class="card-img-top img-fluid rounded-top" alt="Project 1">
-                  <div class="card-body">
-                    <h5 class="card-title">Cotton Leaf International (CLI) Website</h5>
-                    <p class="card-text">A responsive company website for CLI, highlighting products, vision, and contact info with a clean and professional design.</p>
-                  </div>
-                  <div class="card-footer bg-transparent border-0 text-center">
-                    <a href="CLI WEB/index.html" target="_blank" class="btn btn-outline-light">View Project</a>
-                  </div>
-                </div>
-              </div> 
-              
-            </div>
-          </div>
-
-          
-
-
-
-        </section>
-        
         <!-- Skills Section -->
-        <section id="skills" class="py-5 text-light">
+        <section id="skills" class="py-5 ">
           <div class="container">
             <h2 class="mb-5 text-center">Skills</h2>
             <div class="row">
               
               <!-- Skill Card 1 -->
-              <div class="col-md-4 mb-4">
+              <div class="col-md-4 mb-4" data-aos="fade-up">
                 <div class="card bg-dark text-light border-light h-100">
                   <div class="card-body">
                     <h5 class="card-title">Web Fundamentals</h5>
@@ -155,7 +96,7 @@
               </div>
               
               <!-- Skill Card 2 -->
-              <div class="col-md-4 mb-4">
+              <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="card bg-dark text-light border-light h-100">
                   <div class="card-body">
                     <h5 class="card-title">Frameworks & Libraries</h5>
@@ -167,7 +108,7 @@
               </div>
               
               <!-- Skill Card 3 -->
-              <div class="col-md-4 mb-4">
+              <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="card bg-dark text-light border-light h-100">
                   <div class="card-body">
                     <h5 class="card-title">Responsive Design</h5>
@@ -216,45 +157,182 @@
               
           </div>
         </section>
-        
 
-
-         <!----- Video section -----> 
-         <section class="video-section py-5 text-light bg-dark">
-          <div class="container">
-            <h2 class="text-center mb-5">React Project</h2>
-            <div class="row">
-              <div class="col-lg-6 mb-4">
-                <div class="ratio ratio-16x9 shadow rounded">
-                  <video src="img/0307.mp4" controls class="w-100" poster="img/alisha.png" ></video>
-                </div>
-                <div class="text-center mt-3">
-                  <h4>React Project 1</h4>
-                </div>
+  <section class="section py-5" id="projects ">
+    <div class="container">
+      <h2 class="mb-5 text-center" data-aos="fade-up">My <span class="highlight">Projects</span></h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-right" data-aos-delay="100">
+          <div class="card bg-dark text-light h-100 border-0 shadow overflow-hidden" style="border-radius: 12px;">
+            <div class="card-img-container overflow-hidden">
+              <img src="img/calculator.png" class="card-img-top img-fluid" alt="Calculator" style="border-radius: 12px 12px 0 0;">
+              <div class="img-overlay"></div>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="mb-3">
+                <h5 class="card-title fw-bold" style="color: var(--highlight);">Calculator</h5>
+                <p class="card-text">A simple calculator built using HTML, CSS, and JavaScript.</p>
               </div>
-              <div class="col-lg-6 mb-4">
-                <div class="ratio ratio-16x9 shadow rounded">
-                  <video src="img/03-13-28-Trim-ezgif.com-crop-video - Trim.mp4" controls class="w-100" poster="img/ajarjuxe.png"></video>
-                </div>
-                <div class="text-center mt-3">
-                  <h4>React Project 2</h4>
+              <div class="mt-auto">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-secondary">JavaScript</span>
+                  <span class="badge bg-secondary">CSS3</span>
+                  <span class="badge bg-secondary">HTML5</span>
                 </div>
               </div>
             </div>
+            <div class="card-footer bg-transparent border-0 text-center pt-0">
+              <a href="calculator/index.html" target="_blank" class="btn view-btn btn-outline-light px-4 py-2" style="border-radius: 20px; border-width: 2px;">
+                <i class="fas fa-external-link-alt me-2"></i>View Project
+              </a>
+            </div>
           </div>
-        </section>
+        </div>
         
+        <div class="col-md-4" data-aos="fade-right" data-aos-delay="500">
+          <div class="card bg-dark text-light border-0 h-100 shadow overflow-hidden" style="border-radius: 12px;">
+            <div class="card-img-container overflow-hidden">
+              <img src="img/todolist.png" class="card-img-top img-fluid" alt="To-Do List" style="border-radius: 12px 12px 0 0;">
+              <div class="img-overlay"></div>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="mb-3">
+                <h5 class="card-title fw-bold" style="color: var(--highlight);">To-Do List with Snowfall Effect</h5>
+                <p class="card-text">A clean, functional To-Do app with add, delete, complete task features — plus a snowfall effect for a cozy UI touch.</p>
+              </div>
+              <div class="mt-auto">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-secondary">JavaScript</span>
+                  <span class="badge bg-secondary">CSS3</span>
+                  <span class="badge bg-secondary">HTML5</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center pt-0">
+              <a href="to do list.html/index.html" target="_blank" class="btn view-btn btn-outline-light px-4 py-2" style="border-radius: 20px; border-width: 2px;">
+                <i class="fas fa-external-link-alt me-2"></i>View Project
+              </a>
+            </div>
+          </div>
+        </div>
         
+        <div class="col-md-4" data-aos="fade-right" data-aos-delay="600">
+          <div class="card bg-dark text-light border-0 h-100 shadow overflow-hidden" style="border-radius: 12px;">
+            <div class="card-img-container overflow-hidden">
+              <img src="img/elitetextile.png" class="card-img-top img-fluid" alt="Elite Textile" style="border-radius: 12px 12px 0 0;">
+              <div class="img-overlay"></div>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="mb-3">
+                <h5 class="card-title fw-bold" style="color: var(--highlight);">Elite Textile E-commerce Website</h5>
+                <p class="card-text">A modern product page with view, add to cart, and buy now features. Built for a smooth shopping experience using HTML, CSS & JavaScript.</p>
+              </div>
+              <div class="mt-auto">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-secondary">JavaScript</span>
+                  <span class="badge bg-secondary">CSS3</span>
+                  <span class="badge bg-secondary">HTML5</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center pt-0">
+              <a href="elitetextile.us product page/index.html" target="_blank" class="btn view-btn btn-outline-light px-4 py-2" style="border-radius: 20px; border-width: 2px;">
+                <i class="fas fa-external-link-alt me-2"></i>View Project
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4" data-aos="fade-right" data-aos-delay="700">
+          <div class="card bg-dark text-light border-0 h-100 shadow overflow-hidden" style="border-radius: 12px;">
+            <div class="card-img-container overflow-hidden">
+              <img src="img/tipuu.png" class="card-img-top img-fluid" alt="Tipa Haus Books" style="border-radius: 12px 12px 0 0;">
+              <div class="img-overlay"></div>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="mb-3">
+                <h5 class="card-title fw-bold" style="color: var(--highlight);">Tipa Haus Books – 2024</h5>
+                <p class="card-text">A book website project for Tipa Haus, featuring a modern layout to showcase books and categories with responsive design.</p>
+              </div>
+              <div class="mt-auto">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-secondary">JavaScript</span>
+                  <span class="badge bg-secondary">CSS3</span>
+                  <span class="badge bg-secondary">HTML5</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center pt-0">
+              <a href="2024 Tipa Haus Books. Project Web/index.html" target="_blank" class="btn view-btn btn-outline-light px-4 py-2" style="border-radius: 20px; border-width: 2px;">
+                <i class="fas fa-external-link-alt me-2"></i>View Project
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4" data-aos="fade-right" data-aos-delay="800">
+          <div class="card bg-dark text-light border-0 h-100 shadow overflow-hidden" style="border-radius: 12px;">
+            <div class="card-img-container overflow-hidden">
+              <img src="img/cli.png" class="card-img-top img-fluid" alt="CLI Website" style="border-radius: 12px 12px 0 0;">
+              <div class="img-overlay"></div>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="mb-3">
+                <h5 class="card-title fw-bold" style="color: var(--highlight);">Cotton Leaf International (CLI) Website</h5>
+                <p class="card-text">A responsive company website for CLI, highlighting products, vision, and contact info with a clean and professional design.</p>
+              </div>
+              <div class="mt-auto">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-secondary">JavaScript</span>
+                  <span class="badge bg-secondary">CSS3</span>
+                  <span class="badge bg-secondary">HTML5</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center pt-0">
+              <a href="CLI WEB/index.html" target="_blank" class="btn view-btn btn-outline-light px-4 py-2" style="border-radius: 20px; border-width: 2px;">
+                <i class="fas fa-external-link-alt me-2"></i>View Project
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ <!----- Video section -----> 
+ <section class="video-section py-5 ">
+  <div class="container">
+    <h2 class="text-center mb-5">React Project</h2>
+    <div class="row">
+      <div class="col-lg-6 mb-4" data-aos="zoom-in" data-aos-delay="600">
+        <div class="ratio ratio-16x9 shadow rounded">
+          <video src="img/0307.mp4" controls class="w-100" poster="img/alisha.png" ></video>
+        </div>
+        <div class="text-center mt-3">
+          <h4 class="react-head-2" >React Project 1</h4>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-4" data-aos="zoom-in" data-aos-delay="600">
+        <div class="ratio ratio-16x9 shadow rounded">
+          <video src="img/03-13-28-Trim-ezgif.com-crop-video - Trim.mp4" controls class="w-100" poster="img/ajarjuxe.png"></video>
+        </div>
+        <div class="text-center mt-3">
+          <h4 class="react-head-2">React Project 2</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-      </main>
-      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="index.js"></script>
 
 
+</body>
 
-
-
-
-    <script src="index.js"></script>
-  </body>
 </html>

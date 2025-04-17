@@ -1,161 +1,196 @@
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --dark-bg: #1e1e1e;
+  --dark-text: #ffffff;
+  --highlight: #ffa700;
+  --light-bg: #ececec;
+  --light-text: #212529;
+}
+
+[data-theme="dark"] {
+  --bg-color: var(--dark-bg);
+  --text-color: var(--dark-text);
+  --accent-color: var(--highlight);
+}
+
+[data-theme="light"] {
+  --bg-color: var(--light-bg);
+  --text-color: var(--light-text);
+  --accent-color: var(--highlight);
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-  }
-
-  header {
-    padding: 60px 0;
-    background-color: #1e1e1e;
-    height: 70dvh;
-  }
-.header-container{
-    height: 40dvh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s;
 }
-  .hero-text h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #fff;
-  }
-  .rotating-text {
-    transition: opacity 0.5s ease-in-out;
-    color: #ffa700;
-  }
-  
-  .inner-circle {
-    position: relative;
-    z-index: 1;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 6px solid #ffa700;
-  }
-
-  .inner-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-/* Small screens (mobile) */
-@media (max-width: 576px) {
-  .hero-text h1 {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-
-  .inner-circle {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-  }
+.toggle {
+  background-color: var(--highlight);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.1);
+  line-height: 1;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  transition: background-color 0.4s ease;
 }
 
-/* Medium screens (tablets) */
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 1.9rem;
-   width: 150%;
-   text-align: center;
-   padding: 0;
-   margin-left: -80px;
-   
+.input-btn {
+  display: none;
+}
+
+.icon-btn {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  transition: transform 0.5s ease;
+  position: absolute;
+}
+
+.icon--moon {
+  transition-delay: 0.2s;
+  color: black;
+}
+
+.icon--sun {
+  transform: scale(0);
+  color: yellow;
+}
+
+.input-btn:checked ~ .toggle .icon--moon {
+  transform: rotate(360deg) scale(0);
+}
+
+.input-btn:checked ~ .toggle .icon--sun {
+  transition-delay: 0.2s;
+  transform: scale(1) rotate(360deg);
+}
+.input-btn:checked + .toggle {
+  background-color: black; /* when toggled to sun */
+}
+
+/* About Section Custom Responsiveness */
+.about-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.image-col {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.text-col {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .text-col {
+    text-align: left;
   }
 
-  .inner-circle {
-    width: 250px;
-    height: 250px;
-    margin: 0 auto;
+  .image-col {
+    text-align: left;
+    margin-bottom: 0;
+    width: 40%;
   }
 }
-  
-  main {
-    background-color: #2c2c2c;
-    color: #ffffff; /* Make sure text is legible on dark background */
-    padding: 60px 0;
-  }
 
-  .card:hover {
-    transform: translateY(-5px);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .card img {
-    object-fit: cover;
-    height: 200px;
-  }
-  
+/* Optional: Inner Circle Border */
+.inner-circle {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007bff33, #6c757d33);
+}
+.progress-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
-  
-  .progress-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  
-  .progress-item {
-    width: 200px;
-    height: 200px;
-    font-size: 30px;
-    color: #fff;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    background: #07070c;
-    text-align: center;
-    line-height: 200px;
-    margin: 20px;
-  }
-  
-  .progress-item::after {
-    content: "%";
-  }
-  
-  .progress-item .progress-title {
-    position: relative;
-    z-index: 100;
-  }
-  
-  .progress-item .progress-overlay {
-    width: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color: #07070c;
-  }
-  
-  .progress-item .progress-left,
-  .progress-item .progress-right {
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 10px solid #ffa700;
-    border-radius: 100px 0 0 100px;
-    border-right: 0;
-    transform-origin: right; /* Correcting the origin */
-    transition: transform 1s ease-in-out;
-  }
-  
-  /* 85% Circle (306 degrees = 180 + 126) */
-  .progress-85 .progress-right {
-    transform: rotate(280deg); /* Right side rotates half for 85% */
-  }
-  
-  .progress-85 .progress-left {
-    transform: rotate(180deg); /* Left side fills 126 degrees (306 - 180) */
-  }
-  
-  /* 50% Circle (exact half) */
-  .progress-50 .progress-right {
-    transform: rotate(180deg); /* Right side rotates half for 50% */
-  }
-  
- 
-  /* Extra Small Devices (phones under 480px) */
+.progress-item {
+  width: 200px;
+  height: 200px;
+  font-size: 30px;
+  color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background: #07070c;
+  text-align: center;
+  line-height: 200px;
+  margin: 20px;
+}
+
+.progress-item::after {
+  content: "%";
+}
+
+.progress-item .progress-title {
+  position: relative;
+  z-index: 100;
+}
+
+.progress-item .progress-overlay {
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #07070c;
+}
+
+.progress-item .progress-left,
+.progress-item .progress-right {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 10px solid #ffa700;
+  border-radius: 100px 0 0 100px;
+  border-right: 0;
+  transform-origin: right; /* Correcting the origin */
+  transition: transform 1s ease-in-out;
+}
+
+/* 85% Circle (306 degrees = 180 + 126) */
+.progress-85 .progress-right {
+  transform: rotate(280deg); /* Right side rotates half for 85% */
+}
+
+.progress-85 .progress-left {
+  transform: rotate(180deg); /* Left side fills 126 degrees (306 - 180) */
+}
+
+/* 50% Circle (exact half) */
+.progress-50 .progress-right {
+  transform: rotate(180deg); /* Right side rotates half for 50% */
+}
+.react-head-2 {
+  color: var(--highlight);
+}
+.view-btn:hover {
+  background-color: var(--highlight);
+  border-color: #07070c;
+}
+/* Extra Small Devices (phones under 480px) */
 @media (max-width: 480px) {
   .hero-text h1 {
     font-size: 1.5rem;
@@ -218,14 +253,6 @@ body {
 
 /* Medium Devices (up to tablets 768px) */
 @media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 1.8rem;
-    text-align: center;
-    width: 100%;
-    margin-left: 0;
-    padding: 0 10px;
-  }
-
   .inner-circle {
     width: 220px;
     height: 220px;
@@ -242,5 +269,346 @@ body {
     height: 180px;
     font-size: 26px;
     line-height: 180px;
+  }
+}
+
+.highlight {
+  color: var(--accent-color);
+}
+
+.view-btn {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.view-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--dark-bg);
+}
+
+.skill-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.social-icons {
+  font-size: 1.5rem;
+}
+
+.social-icons a {
+  color: var(--accent-color);
+  margin-left: 10px;
+}
+
+#loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #1a1a1a;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  color: #ffc107;
+}
+
+/* Card styling */
+.card {
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 167, 0, 0.1) !important;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(255, 167, 0, 0.1) !important;
+}
+
+.card-img-container {
+  position: relative;
+  height: 200px;
+}
+
+.card-img-top {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 30, 30, 0.1),
+    rgba(30, 30, 30, 0.7)
+  );
+  border-radius: 12px 12px 0 0;
+}
+
+.view-btn {
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.view-btn:hover {
+  background-color: var(--highlight) !important;
+  border-color: var(--highlight) !important;
+  color: var(--dark-bg) !important;
+  transform: translateY(-2px);
+}
+
+.badge {
+  font-weight: 400;
+  padding: 5px 10px;
+  margin: 2px;
+}
+.inner-circle {
+  position: relative;
+  z-index: 1;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid #ffa700;
+}
+
+.inner-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* iPad Air (820 x 1180) and iPad Mini (768 x 1024) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1180px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* General adjustments */
+  body {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  /* Hero section */
+  .hero-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Profile image circle */
+  .inner-circle {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto 2.5rem;
+  }
+
+  /* Skills circles */
+  .progress-container {
+    gap: 1.8rem;
+    padding: 0 2rem;
+  }
+
+  .progress-item {
+    width: 170px;
+    height: 170px;
+    font-size: 28px;
+    line-height: 170px;
+    margin: 0.8rem;
+  }
+
+  /* About section layout */
+  .about-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .image-col,
+  .text-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Cards */
+  .card {
+    margin-bottom: 2rem;
+  }
+
+  .card-img-container {
+    height: 220px;
+  }
+
+  /* Navigation */
+  .navbar {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .toggle {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* Microsoft Surface Pro (912 x 1368) */
+@media only screen and (min-device-width: 912px) and (max-device-width: 1368px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* More horizontal space utilization */
+  .inner-circle {
+    width: 340px;
+    height: 340px;
+  }
+
+  .progress-container {
+    justify-content: space-evenly;
+  }
+
+  .progress-item {
+    width: 180px;
+    height: 180px;
+    line-height: 180px;
+  }
+
+  /* Two-column layout for about section */
+  .about-section .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .image-col {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+
+  .text-col {
+    flex: 0 0 55%;
+    max-width: 55%;
+    padding-left: 2rem;
+  }
+
+  /* Card grid */
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+/* ASUS ZenBook Fold (1104 x 1280 when folded) */
+@media only screen and (min-device-width: 853px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Special layout for folding screen */
+  .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  /* Hero section */
+  .hero-text h1 {
+    font-size: 3rem;
+    line-height: 1.3;
+  }
+
+  /* Profile image */
+  .inner-circle {
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  /* Skills layout */
+  .progress-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .progress-item {
+    width: 190px;
+    height: 190px;
+    margin: 1.5rem;
+  }
+
+  /* About section */
+  .about-section .row {
+    align-items: flex-start;
+  }
+
+  .image-col {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  .text-col {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  /* Cards */
+  .card-columns {
+    column-count: 2;
+    column-gap: 2rem;
+  }
+
+  .card {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Common adjustments for all these devices */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1368px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  /* Better touch targets */
+  .nav-link,
+  .view-btn,
+  .toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Theme toggle */
+  .toggle {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Prevent text overflow */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-wrap: break-word;
+  }
+
+  /* Image optimization */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Form elements */
+  input,
+  textarea,
+  select {
+    font-size: 1rem;
+    padding: 0.8rem;
   }
 }
