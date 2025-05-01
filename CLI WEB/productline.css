@@ -1,0 +1,29 @@
+.image-thumbnail , .img-thumbnail-2 , .image-3 , .image-4 , .img-5 , .img-6  , .img-7 {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.image-thumbnail:hover , .img-thumbnail-2:hover , .image-3:hover , .image-4:hover , .img-5:hover , .img-6:hover , .img-7:hover {
+  transform: scale(1.05);
+}
+.modal-dialog {
+  max-width: 60%; /* Adjust this value to control modal width */
+}
+
+#modalImage , #specialModalImage ,  #premiumModalImage , #curtainModalImage , #fabricModalImage , #sofaModalImage , #cottonBagModalImageUnique {
+  width: 100%; /* Ensure image takes full available width */
+  height: auto; /* Keeps the aspect ratio */
+}
+
+
+
+.product-line-heading {
+  font-family: "Chakra Petch", serif;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
+.collection-header{
+  font-family: "Acme", serif;
+}
